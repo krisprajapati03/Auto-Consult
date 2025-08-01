@@ -1,4 +1,4 @@
-// /controllers/admin/authController.js
+// /controllers/authController.js
 
 import jwt from 'jsonwebtoken';
 import Admin from '../models/adminModel.js';
