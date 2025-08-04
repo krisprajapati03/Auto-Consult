@@ -14,8 +14,7 @@ export default {
         darkGray: '#CCC6BA',
         lightGray: '#FFFCF2',
         errorRed: '#E61212',
-        blazeOrange: '#EB5E28',
-darkBlack: '#252422',
+        
 
       },
     },
