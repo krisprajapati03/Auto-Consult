@@ -6,8 +6,54 @@ const vehicleSchema = new mongoose.Schema({
     required: true, // e.g., "Honda Civic ZX 2021"
   },
   company: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Company',
+    required: true,
+  },
+  driveType:{
     type: String,
-    required: true, // e.g., "Honda"
+    enum: ['AWD/4WD', 'FrontWheelDrive', 'RearWheelDrive'],
+    required: true,
+  },
+  doors:{
+    type:Number,
+    enum:[5,4,3,2],
+    required: true,
+  },
+  safetyFeatures: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'SafetyFeature',
+    required: true,
+  }],
+  fuelType: {
+    type: String,
+    enum: ['Petrol', 'Diesel', 'Electric', 'Hybrid', 'Petrol & CNG'],
+    required: true,
+  },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true,
+  },
+  features: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Feature',
+    required: true,
+  }],
+  cylinder:{
+    type:Number,
+    enum:[2,4,6,8],
+    required: true,
+  },
+  transmission: {
+    type: String,
+    enum: ['Manual', 'Automatic', 'Semi-Automatic'],
+    required: true,
+  },
+  color: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Color',
+    required: true,
   },
   model: {
     type: String,
@@ -16,15 +62,6 @@ const vehicleSchema = new mongoose.Schema({
   variant: {
     type: String,
     required: true, // e.g., "ZX CVT"
-  },
-  color: {
-    type: String,
-    required: true,
-  },
-  transmission: {
-    type: String,
-    enum: ['Manual', 'Automatic'],
-    required: true,
   },
   condition: {
     type: String,
@@ -39,15 +76,12 @@ const vehicleSchema = new mongoose.Schema({
     type: Number, // in kilometers
     required: true,
   },
-  fuelType: {
-    type: String,
-    enum: ['Petrol', 'Diesel', 'Electric', 'Hybrid', 'CNG', 'LPG'],
-    required: true,
-  },
-  images: {
-    type: [String], // array of image URLs or filenames
-    default: [],
-  },
+  images: [
+    {
+      url: { type: String, required: true },
+      public_id: { type: String, required: true },
+    },
+  ],
   numberOfOwners: {
     type: Number,
     required: true,
@@ -60,15 +94,10 @@ const vehicleSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  features: {
-    type: [String], // e.g., ['Airbags', 'ABS', 'Sunroof']
-    default: [],
-  },
   offerId: {
     type: String,
-    required: true,
     unique: true,
-    length: 6, // 6-digit ID
+    required: false,
   },
   addedDate: {
     type: Date,

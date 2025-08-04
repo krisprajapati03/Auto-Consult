@@ -7,7 +7,7 @@ function HighlightText({ text }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-darkBlack text-white py-12">
+    <footer className="bg-darkBlack text-white py-12 bottom-0">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Column 1: Links */}

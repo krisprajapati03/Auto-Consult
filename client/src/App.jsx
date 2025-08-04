@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from './Layout'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import {BrowserRouter as Router, createBrowserRouter, createRoutesFromElements, Routes, Route, RouterProvider } from 'react-router-dom'
 import Home from './pages/user/Home'
 import About from './pages/user/About'
 import Inventory from './pages/user/Inventory' 
@@ -8,8 +8,6 @@ import LoanCalculator from './pages/user/LoanCalculator'
 import Contact from './pages/user/Contact'
 import Sold from './pages/user/Sold'
 import ManuItems from './pages/user/ManuItems'
-
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(

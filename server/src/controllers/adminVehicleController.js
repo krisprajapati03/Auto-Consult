@@ -2,7 +2,7 @@
 import * as adminVehicleService from '../services/adminVehicleService.js';
 
 // 🟢 Create new vehicle
-export const createVehicleController = async (req, res) => {
+export const createVehicleController = async (req, res) => { 
   const vehicle = await adminVehicleService.createVehicle(req.body);
   res.status(201).json({
     success: true,
