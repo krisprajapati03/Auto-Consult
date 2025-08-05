@@ -7,9 +7,17 @@ const FeaturedCardSmall = ({ vehicle }) => {
   return (
     <div
       onClick={() => navigate(`/vehicle/${vehicle._id}`)}
-      className="cursor-pointer group bg-darkBlack text-white rounded-md overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+      className="cursor-pointer relative group bg-darkBlack text-white rounded-md overflow-hidden shadow-md hover:shadow-xl transition duration-300"
     >
-      <div className="relative">
+      {/* Sold Out Ribbon */}
+      {vehicle.isSold && (
+        <div className="absolute z-10 top-16 -left-7 bg-red-600 text-white text-xs font-bold px-10 py-2 rotate-[-45deg] origin-top-left">
+          Sold Out
+        </div>
+      )}
+
+      {/* Image Section */}
+      <div className="">
         <img
           src={vehicle.images?.[0]?.url}
           alt={vehicle.fullName}
@@ -20,6 +28,7 @@ const FeaturedCardSmall = ({ vehicle }) => {
         </div>
       </div>
 
+      {/* Text Section */}
       <div className="p-3">
         <h3 className="font-semibold text-base">{vehicle.fullName}</h3>
         <p className="text-lg font-bold text-white mt-1">

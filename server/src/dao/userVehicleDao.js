@@ -26,7 +26,6 @@ export const filterVehicles = async (filters) => {
   const query = {
     ...filters,
     available: true,
-    isSold: false,
   };
   return await Vehicle.find(query);
 };

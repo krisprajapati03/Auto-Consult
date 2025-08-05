@@ -1,12 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import HighlightText from './HighlightText';
 import HoverLink from './HoverLink';
 
 const Navbar = () => {
-  return (
-    <nav className="bg-lightGray shadow-md">
-      <div className="max-w-screen-xl mx-auto px-4 h-20 flex items-center justify-between">
+  return (  
+    <nav className="bg-lightGray shadow-md fixed top-0 left-0 w-full z-50">
+  <div className="max-w-screen-xl mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center space-x-3">
           <Link to="/">

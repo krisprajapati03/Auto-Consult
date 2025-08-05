@@ -8,6 +8,7 @@ import LoanCalculator from './pages/user/LoanCalculator'
 import Contact from './pages/user/Contact'
 import Sold from './pages/user/Sold'
 import ManuItems from './pages/user/ManuItems'
+import CarDetails from './components/user/CarDetails'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,8 @@ const router = createBrowserRouter(
       <Route path='contact' element={<Contact />} />
       <Route path='menu-items' element={<ManuItems />} />
       <Route path='sold' element={<Sold />} />
+      <Route path='vehicle/:id' element={<CarDetails />} />
+
     </Route>
   )
 )
